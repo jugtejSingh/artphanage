@@ -1,0 +1,72 @@
+.left{
+    font-family: Arial, serif;
+    margin-top: 13vh;
+    font-size: 2.5rem;
+
+}
+.imageAndText{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.image{
+    margin-top: 14vh;
+    margin-left: 6vw;
+}
+.text1{
+    overflow: hidden;
+    border-right: .08em solid;
+    white-space: nowrap;
+    animation:
+            typing 5s steps(50, end),
+            blink-caret .50s step-end infinite;
+}
+.text2{
+    overflow: hidden;
+    border-right: .08em solid;
+    white-space: nowrap;
+    opacity: 0;
+    animation:
+            typing2 5s steps(40, end),
+            blink-caret .75s step-end infinite;
+    animation-delay: 5s;
+}
+.text3{
+    overflow: hidden;
+    border-right: .08em solid;
+    white-space: nowrap;
+    opacity: 0;
+    animation:
+            typing2 5s steps(40, end),
+            blink-caret .75s step-end infinite;
+    animation-delay: 10s;
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    100% {
+    width: 100%;
+    }
+}
+@keyframes typing2 {
+    from {
+        opacity: 1;
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+}
+
+.marginRight{
+    margin-right: 150px;
+}
+.marginRight2{
+    margin-right: 100px;
+}

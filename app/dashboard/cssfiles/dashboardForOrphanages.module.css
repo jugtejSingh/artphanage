@@ -1,0 +1,23 @@
+.sideBar{
+    background: rgb(220,220,220);
+    color: black;
+    height: 82.94vh;
+    width: 12vw;
+}
+.flex{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.flexColumn{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.items{
+    margin-top: 5vh;
+    cursor: pointer;
+}
+.currentProductsTitle{
+    margin-left: 32vw
+}

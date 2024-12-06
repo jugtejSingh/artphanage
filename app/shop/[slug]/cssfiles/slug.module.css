@@ -1,0 +1,59 @@
+.flex{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+}
+.flex2{
+    display: flex;
+    flex-direction: row;
+}
+.flex3{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10vh;
+    margin-left: 28vw;
+}
+.innerFlex{
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: row;
+}
+.mainImage{
+    margin-left: -6vw;
+}
+.sideImage{
+    margin-bottom: 8vh;
+}
+.artName{
+    margin-left: 12vw;
+    font-size: 40px;
+}
+.textSide{
+    margin-left: 5vw;
+}
+.description{
+    font-size: 20px;
+    margin-right: 4vw;
+}
+.dimensions{
+    margin-left: 13vw;
+    font-size: 20px;
+}
+.dimensions2{
+    margin-left: 2vw;
+    font-size: 20px;
+}
+.additionalInfo{
+    margin-left: 14vw;
+}
+.button{
+    width: 120px;
+    height: 40px;
+    border: none;
+    margin-top: 2vh;
+    border-radius: 40px;
+    margin-left: 2vw;
+}
+.images{
+    margin-left: -7vw;
+}

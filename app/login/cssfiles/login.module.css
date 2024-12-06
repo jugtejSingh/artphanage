@@ -1,0 +1,50 @@
+.main{
+    display: flex;
+    flex-direction: row;
+}
+.form{
+    margin-left: 7vw;
+    margin-top: 30vh;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.image{
+    margin-left: 20vh;
+    width: 70vw;
+    height: 100vh;
+}
+.loginTitle{
+    text-align: center;
+}
+.email{
+    height: 30px;
+    border: 1px gray solid;
+}
+.password{
+    margin-top: 20px;
+    height: 30px;
+    border: 1px gray solid;
+}
+.submit{
+    margin-top: 35px;
+    height: 30px;
+    border-radius: 20px;
+    border: 0;
+    cursor: pointer;
+    border-bottom: 5px solid rgb(204,204,204);
+}
+.submit:hover{
+    background-color: rgb(220,220,220);
+}
+.submit:active{
+    border-bottom: 2px solid rgb(204,204,204);
+}
+.back{
+    margin-top: 2vh;
+    margin-left: 0.3vw;
+    cursor: pointer;
+}
+.forOrphanages{
+margin-top: -5vh;
+}
