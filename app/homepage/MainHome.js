@@ -4,12 +4,12 @@ import Image from "next/image"
 import {useEffect, useRef} from "react";
 import {Barlow} from "next/font/google";
 
-const barlow900 = Barlow({ weight: "700" ,subsets: ['latin'] })
+const barlow900 = Barlow({ weight: "700" ,subsets: ['latin'], display: 'swap' })
 
 export default function Homepage() {
     const text1Ref = useRef(null);
     const text2Ref = useRef(null);
-    const text3Ref = useRef(null);
+    const text3Ref =    useRef(null);
     useEffect(() =>{
         //TEXT2
         const animationElement1 = text1Ref.current;
@@ -41,7 +41,7 @@ export default function Homepage() {
                 <h3 ref={text3Ref} className={`${styles.text3} ${barlow900.className}`}>Art That Helps The Helpless.</h3>
                 </div>
             </div>
-                <Image src={"/image2.jpg"} width={700} height={400} className={styles.image}></Image>
+                <Image src={"/image2.jpg"} width={700} height={400} className={styles.image} alt={"Image"}></Image>
             </div>
         </div>
     );

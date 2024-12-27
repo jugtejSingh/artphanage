@@ -1,4 +1,3 @@
-import styles from '@/app/page.module.css';
 import Navbar from "@/app/homepage/Navbar";
 import Homepage from "@/app/homepage/MainHome";
 import "@/lib/databaseConnector"

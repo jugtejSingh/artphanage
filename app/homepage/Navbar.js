@@ -2,8 +2,8 @@ import styles from "./cssfiles/navbar.module.css"
 import Link from "next/link";
 import {Barlow} from "next/font/google";
 
-const barlow600 = Barlow({ weight: "600" ,subsets: ['latin'] })
-const barlow200 = Barlow({ weight: "200" ,subsets: ['latin'] })
+const barlow600 = Barlow({ weight: "600" ,subsets: ['latin'], display: 'swap' })
+const barlow200 = Barlow({ weight: "200" ,subsets: ['latin'], display: 'swap' })
 
 export default async function Navbar() {
          return (
