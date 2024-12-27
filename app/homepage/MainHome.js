@@ -37,7 +37,7 @@ export default function Homepage() {
                 <div className={styles.marginRight2}>
                 <h3 ref={text2Ref} className={`${styles.text2} ${barlow900.className}`}>Art That You Can Trust.</h3>
                 </div>
-                <div className={styles.marginRight3}>
+                <div>
                 <h3 ref={text3Ref} className={`${styles.text3} ${barlow900.className}`}>Art That Helps The Helpless.</h3>
                 </div>
             </div>

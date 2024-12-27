@@ -3,21 +3,13 @@
     color: black;
     height: 82.94vh;
     width: 12vw;
+    text-align: center;
 }
 .flex{
-    text-align: center;
     display: flex;
     flex-direction: row;
-}
-.flexColumn{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 .items{
     margin-top: 5vh;
     cursor: pointer;
-}
-.currentProductsTitle{
-    margin-left: 32vw
 }

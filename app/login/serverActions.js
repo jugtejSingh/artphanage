@@ -16,7 +16,6 @@ export async function submitted(state, data) {
             email: email
         }
     })
-    console.log(secretKey)
     if (checkingUser) {
         const passwordOld = checkingUser.password;
         const match = await bcrypt.compare(password, passwordOld)

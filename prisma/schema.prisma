@@ -9,15 +9,17 @@ datasource db {
 
 model paintings {
   id             String        @id @default(auto()) @map("_id") @db.ObjectId
-  artName        String
+  artName        String        @unique
   description    String
-  imageName      String
-  imageName2     String
-  imageName3     String
-  imageName4     String
+  imageName      String[]
   price          String
   slug           String        @unique
   sold           String
+  frame          String
+  size           String
+  orphanage      String
+  childName      String
+  location       String
   organization   organization? @relation(fields: [organizationId], references: [id])
   organizationId String?       @db.ObjectId
 }
@@ -27,4 +29,6 @@ model organization {
   paintings paintings[]
   email     String      @unique
   password  String
+  role      String
+  name      String
 }

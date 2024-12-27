@@ -6,7 +6,7 @@ import Link from "next/link";
 import {useEffect} from "react";
 
 export default function Cards({painting}){
-    var counting = 0;
+    console.log(painting)
     return(
 
         <div className={styles.outerFlex}>
@@ -14,7 +14,7 @@ export default function Cards({painting}){
                 return(
                     <div key={data.id} className={`${styles.innerFlex} ${index > 3? styles.noTopBorder : ""} ${index = 0 || index % 4 === 0 ? styles.noLeftSide : ""}`}>
                         <div className={styles.images}>
-                        <Image src="/image2.jpg" width={300} height={400} alt={data.artName} className={styles.innerImage}/>
+                        <Image src={data.imageName[0]} width={300} height={400} alt={data.artName} className={styles.innerImage}/>
                         </div>
                         <h3 className={styles.artName}>{data.artName}</h3>
                         <div className={styles.buttonAndPrice}>

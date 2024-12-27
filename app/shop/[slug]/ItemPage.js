@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./cssfiles/slug.module.css"
 import {useEffect, useState} from 'react'
 import {Barlow} from "next/font/google";
+import {gettingData} from "@/app/shop/[slug]/serverAction";
 
 const barlow600 = Barlow({ weight: "600" ,subsets: ['latin'] })
 const barlow400 = Barlow({ weight: "400" ,subsets: ['latin'] })
@@ -14,46 +15,39 @@ export default function ItemPage({params}) {
     const [biggerImage, setBiggerImage] = useState();
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("/shop/api/",
-                {
-                    method : "POST",
-                    body : JSON.stringify({slug : params.slug})
-                });
-            let data = await response.json();
-            setPaintings(data)
-            setBiggerImage(data.imageName)
+            console.log("Fetching Data")
+            const paintingData = await gettingData(params.slug)
+            console.log("Fetched Data", paintingData);
+            setPaintings(paintingData)
+            setBiggerImage(await paintingData.imageName[0])
         }
-        fetchData()},[])
+        fetchData()
+    }, [params.slug]);
+
     const handleImageClick = (image) => {
         setBiggerImage(image)
     };
-
+    if (!painting || !painting.imageName || painting.imageName.length === 0) {
+        // Render loading state or fallback UI if painting or imageName is undefined
+        return <Image src={"/loading.gif"} width={80} height={80} alt={"Loading"} className={styles.loading}/>
+    }
     return (
         <div>
-            {painting !== undefined ?
             <div className={styles.flex}>
                 <div className={styles.innerFlex}>
-                    <div>
-                        <Image src={"/images/" + painting.imageName3} alt={"Image"} width={150} height={200}
-                               className={styles.sideImage} onClick={() => handleImageClick(painting.imageName3)}/>
-                        <Image src={"/images/" + painting.imageName4} alt={"Image"} width={150} height={200}
-                               className={styles.sideImage} onClick={() => handleImageClick(painting.imageName4)}/>
-                    </div>
-                    <div className={styles.images}>
-                        <Image src={"/images/" + painting.imageName} alt={"Image"} width={150} height={200}
-                               className={styles.sideImage} onClick={() => handleImageClick(painting.imageName)}/>
-                        <Image src={"/images/" + painting.imageName2} alt={"Image"} width={150} height={200}
-                               className={styles.sideImage} onClick={() => handleImageClick(painting.imageName2)}/>
-                    </div>
+                    {painting.imageName.map((data,index)=> (
+                    <Image src={data} alt={"Image"} width={90} height={130} key={index}
+                     className={styles.sideImage} onClick={() => handleImageClick(data)}/>
+                ))}
                 </div>
-                <Image src={`/images/${biggerImage}`} alt={"Image"} width={350} height={500}
+                <div className={styles.mainImageFill}>
+                <Image src={biggerImage} alt={"Image"} fill={true}
                        className={styles.mainImage}/>
-
+                </div>
                 <div className={styles.textSide}>
 
                     <h2 className={`${styles.artName} ${barlow600.className}`}>{painting.artName}</h2>
-                    <h2 className={`${barlow400.className} ${styles.description}`}>{painting.description} HELLO HELLO
-                        HELLO HELLO HELLO HELLO</h2>
+                    <h2 className={`${barlow400.className} ${styles.description}`}>{painting.description}</h2>
 
                     <div className={styles.flex3}>
                         <h2 className={`${barlow400.className} ${styles.price}`}>${painting.price}</h2>
@@ -61,18 +55,28 @@ export default function ItemPage({params}) {
                     </div>
 
                     <h2 className={`${barlow400.className} ${styles.additionalInfo}`}>Additional Information</h2>
-
+                    <div className={styles.flex2}>
+                        <h2 className={`${barlow800.className} ${styles.dimensions}`}>Artist</h2>
+                        <h2 className={`${barlow400.className} ${styles.dimensions2}`}>{painting.childName}</h2>
+                    </div>
+                    <div className={styles.flex2}>
+                        <h2 className={`${barlow800.className} ${styles.dimensions}`}>Orphanage</h2>
+                        <h2 className={`${barlow400.className} ${styles.dimensions2}`}>{painting.orphanage}</h2>
+                    </div>
+                    <div className={styles.flex2}>
+                        <h2 className={`${barlow800.className} ${styles.dimensions}`}>Location</h2>
+                        <h2 className={`${barlow400.className} ${styles.dimensions2}`}>{painting.location}</h2>
+                    </div>
                     <div className={styles.flex2}>
                         <h2 className={`${barlow800.className} ${styles.dimensions}`}>Dimensions</h2>
-                        <h2 className={`${barlow400.className} ${styles.dimensions2}`}>10x20x100inches</h2>
+                        <h2 className={`${barlow400.className} ${styles.dimensions2}`}>{painting.size}</h2>
                     </div>
                     <div className={styles.flex2}>
                         <h2 className={`${barlow800.className} ${styles.dimensions}`}>Frame</h2>
-                        <h2 className={`${barlow400.className} ${styles.dimensions2}`}>Comes with a Frame</h2>
+                        <h2 className={`${barlow400.className} ${styles.dimensions2}`}>{painting.frame}</h2>
                     </div>
                 </div>
             </div>
-                : null}
         </div>
     );
 }

@@ -16,16 +16,19 @@
 .innerFlex{
     margin-left: 2vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .mainImage{
-    margin-left: -6vw;
+    margin-left: 3vw;
+    width: 380px;
+    height: 500px;
+    overflow: hidden;
 }
 .sideImage{
-    margin-bottom: 8vh;
+    margin-bottom: 1vh;
 }
 .artName{
-    margin-left: 12vw;
+    text-align: center;
     font-size: 40px;
 }
 .textSide{
@@ -33,7 +36,7 @@
 }
 .description{
     font-size: 20px;
-    margin-right: 4vw;
+    text-align: center;
 }
 .dimensions{
     margin-left: 13vw;
@@ -56,4 +59,15 @@
 }
 .images{
     margin-left: -7vw;
+}
+.mainImageFill{
+    position: relative;
+    width: 450px;
+    height: 550px;
+}
+.loading{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30vh;
 }

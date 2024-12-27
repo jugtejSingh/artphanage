@@ -1,0 +1,72 @@
+.addProductsTitle{
+    font-size: 2rem;
+    margin-left: 35vw;
+}
+.labels{
+    display: flex;
+    flex-direction: column;
+}
+.labelsForRadio{
+    display: flex;
+    flex-direction: column;
+    margin-left: 6vmin;
+}
+.radio{
+    display: flex;
+    flex-direction: row;
+}
+.flexForItems{
+    display: flex;
+    flex-direction: row;
+    gap: 10vmin;
+}
+.flexForAllItems{
+    text-align: center;
+    margin-left: 23vw;
+    width: 50vw;
+}
+.nameOfArt{
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.2rem;
+}
+.radio{
+}
+.radio2{
+}
+.price{
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.2rem;
+}
+.location{
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.2rem;
+}
+.dimension{
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.2rem;
+}
+.nameOfArtist{
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.2rem;
+}
+.description{
+    width: 20vw;
+    height: 15vh;
+    font-size: 1.2rem;
+    margin-left: 2vw;
+}
+.flexForItems2{
+    display: flex;
+    flex-direction: row;
+}
+.submit{
+    width: 120px;
+    height: 40px;
+    margin-top: 6vh;
+    margin-left: 37vw;
+}

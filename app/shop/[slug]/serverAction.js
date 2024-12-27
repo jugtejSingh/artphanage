@@ -1,7 +1,6 @@
-import Navbar from "@/app/homepage/Navbar";
-import Cards from "./card.js"
-import prisma from "@/lib/databaseConnector";
+"use server"
 import {GetObjectCommand, S3Client} from "@aws-sdk/client-s3";
+import prisma from "@/lib/databaseConnector";
 import {getSignedUrl} from "@aws-sdk/s3-request-presigner";
 
 const s3 = new S3Client({
@@ -12,18 +11,16 @@ const s3 = new S3Client({
     },
 })
 
-export default async function Page() {
-    const painting = await prisma.paintings.findMany()
-    painting.map(async (painting) => {
-        painting.imageName[0] = await getImage(painting.imageName[0])
-    })
-
-    return (
-        <div>
-            <Navbar />
-            <Cards painting={painting}/>
-        </div>
-    );
+export async function gettingData(slug){
+    const painting = await prisma.paintings.findUnique({
+        where: {
+            slug: slug
+        }
+    });
+    for (let i = 0; i < painting.imageName.length; i++){
+        painting.imageName[i] = await getImage(painting.imageName[i])
+    }
+    return painting
 }
 
 async function getImage(fileName){
@@ -35,7 +32,7 @@ async function getImage(fileName){
     try{
         const command = new GetObjectCommand(params);
         return await getSignedUrl(s3, command, {expiresIn: 3600})
-    } catch (err) {
+            } catch (err) {
         console.error("Error retrieving file:", err);
         throw err;
     }

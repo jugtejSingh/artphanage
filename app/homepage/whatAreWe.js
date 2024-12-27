@@ -1,11 +1,24 @@
 import styles from "./cssfiles/whatarewe.module.css";
+import Image from "next/image"
+import {Barlow} from "next/font/google";
+
+const barlow700 = Barlow({ weight: "700" ,subsets: ['latin'] })
+const barlow400 = Barlow({ weight: "400" ,subsets: ['latin'] })
 
 export default function WhatAreWe(){
     return(
       <div>
-        <h1 className={styles.title}>What are we?</h1>
-          <p> Artphanage is a place for the world to come and discover art. Here you can find art made by children that
-          live in orphanages around the world that would love for you to purchase their creative item</p>
+        <h1 className={`${styles.title} ${barlow700.className}`}>What are we?</h1>
+          <div className={styles.flex}>
+              <div className={styles.imageDiv}>
+              <Image src={"/image2.jpg"} width={500} height={350} className={styles.image}></Image>
+              </div>
+              <div className={styles.mainTextDiv}>
+                  <p className={`${styles.mainText} ${barlow400.className}`}>Artphanage empowers orphanages to sell any creative
+                  work made by the children to the world. Each orphanage is verified by us to ensure the work is genuine and
+                  majority of proceeds are directly given to the orphanage</p>
+              </div>
+          </div>
       </div>
     );
 }
