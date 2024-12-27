@@ -11,6 +11,7 @@ export default function Cards({painting}){
 
         <div className={styles.outerFlex}>
             {painting.map(function(data,index){
+                console.log(data.imageName[0])
                 return(
                     <div key={data.id} className={`${styles.innerFlex} ${index > 3? styles.noTopBorder : ""} ${index = 0 || index % 4 === 0 ? styles.noLeftSide : ""}`}>
                         <div className={styles.images}>
