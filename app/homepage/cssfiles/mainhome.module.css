@@ -10,6 +10,8 @@
     justify-content: center;
 }
 .image{
+    width: 42vw;
+    height: 55vh;
     margin-top: 14vh;
     margin-left: 6vw;
 }
@@ -37,7 +39,7 @@
     white-space: nowrap;
     opacity: 0;
     animation:
-            typing2 5s steps(40, end),
+            typing3 5s steps(40, end),
             blink-caret .75s step-end infinite;
     animation-delay: 10s;
 }
@@ -59,6 +61,16 @@
         width: 100%;
     }
 }
+@keyframes typing3 {
+    from {
+        opacity: 1;
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: black; }
@@ -69,4 +81,69 @@
 }
 .marginRight2{
     margin-right: 100px;
+}
+@media screen and (max-width: 600px) {
+    .imageAndText {
+        flex-direction: column-reverse;
+    }
+
+    .image {
+        width: 100%;
+        height: 40vh;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .left {
+        margin-left: 4vw;
+        margin-top: 5vh;
+        font-size: 6vw;
+    }
+
+    .text1 {
+        margin-left: 17vw;
+    }
+
+    .marginRight {
+        margin-right: 14vw;
+    }
+    .text2 {
+        margin-left: 11vw;
+    }
+    .marginRight2 {
+        margin-right: 5vw;
+    }
+
+    .text3 {
+        margin-left: 3vw;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 80%;
+        }
+    }
+    @keyframes typing2 {
+        from {
+            opacity: 1;
+            width: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 80%;
+        }
+    }
+    @keyframes typing3 {
+        from {
+            opacity: 1;
+            width: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 97%;
+        }
+    }
 }

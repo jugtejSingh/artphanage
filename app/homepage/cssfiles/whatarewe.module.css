@@ -1,17 +1,19 @@
 .title{
    text-align: center;
-    margin-top: 10vh;
-    font-size: 3rem;
+    margin-top: 20vh;
+    font-size: 4vw;
 }
 .flex{
     margin-top: 15vh;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
-    margin-bottom: 25vh;
+    margin-bottom: 20vh;
 }
 .image{
     margin-left: 8vw;
+    width: 37vw;
+    height: 55vh;
     flex: 50%;
 }
 .imageDiv{
@@ -21,7 +23,26 @@ width: 60%;
     flex: 50%;
 }
 .mainText{
-    font-size: 2rem;
+    font-size: 2.1vw;
     width: 70%;
     margin-left: 5vw;
+}
+@media screen and (max-width: 600px){
+    .title{
+        font-size: 7vw;
+    }
+    .flex{
+        flex-direction: column;
+    }
+    .image{
+        flex:100%;
+        width: 100%;
+        margin-left: 25vh;
+    }
+    .mainText{
+        font-size: 3vw;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

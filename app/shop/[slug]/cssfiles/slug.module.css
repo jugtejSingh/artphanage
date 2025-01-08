@@ -25,6 +25,8 @@
     overflow: hidden;
 }
 .sideImage{
+    width: 8vw;
+    height: 22vh;
     margin-bottom: 1vh;
 }
 .artName{
@@ -50,6 +52,7 @@
     margin-left: 14vw;
 }
 .button{
+    cursor: pointer;
     width: 120px;
     height: 40px;
     border: none;
@@ -57,17 +60,52 @@
     border-radius: 40px;
     margin-left: 2vw;
 }
-.images{
-    margin-left: -7vw;
-}
 .mainImageFill{
     position: relative;
-    width: 450px;
-    height: 550px;
+    width: 35vw;
+    height: 70vh;
 }
 .loading{
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30vh;
+    width: 8vw;
+    height: 18vh;
+}
+.flexMobile{
+    display: none;
+}
+.dots{
+    margin: 2vh auto 0;
+}
+.imageAnimation{
+    animation-name: imageAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+@keyframes imageAnimation {
+    from{
+        width: 100%;
+        height: 100%;
+    }
+    to{
+        width: 5vw;
+        height: 10vh;
+        transform: translate(67vw,-24vh);
+    }
+}
+@media screen and (max-width: 600px){
+    .flex{
+        display: none;
+    }
+    .mainImageFill{
+        width: 70vw;
+        height: 50vh;
+        margin-left: 10vw;
+    }
+    .flexMobile{
+        display: flex;
+        flex-direction: column;
+    }
 }

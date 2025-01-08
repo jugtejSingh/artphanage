@@ -1,0 +1,23 @@
+.mainFlex{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.flexForItem{
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+}
+.flexForSides{
+    display: flex;
+    flex-direction: row;
+}
+.phoneNumberWithCode{
+    display: flex;
+    flex-direction: row;
+}
+.border{
+    margin-left: 3vw;
+    width: 90%;
+    border: 2px solid lightgray;
+}

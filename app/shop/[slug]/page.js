@@ -8,9 +8,7 @@ export default function Page({params}) {
     return (
         <div>
             <Navbar />
-            <Suspense fallback={<h2>Loading...........</h2>}>
             <ItemPage params={params} />
-            </Suspense>
         </div>
     );
 }
