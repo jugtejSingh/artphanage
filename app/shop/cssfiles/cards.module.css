@@ -1,90 +1,13 @@
-.innerFlex{
-    display: flex;
-    flex-direction: column;
-    width: 22vw;
-    height: 60vh;
-    border-left: 2px solid black;
-
-}
-.innerFlex.noTopBorder{
-    border-top: 2px solid black;
-}
-.innerFlex.noLeftSide{
-    border-left: 0;
-}
-.outerFlex{
-    margin-left: 6vw;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 3vh;
-}
-.images{
-    margin-left: 4.5vw;
-    margin-top: 1vh;
-}
-.innerImage{
-    width: 13vw;
-    height: 40vh;
-}
-.artName{
-    margin-left: 6.2vw;
-}
-.price{
-    margin-right: 2vw;
-
-}
-.button{
-    text-decoration: none;
-    width: 6vw;
-    height: 5vh;
-    margin-top: 2vh;
-    border-radius: 30px;
-    border: none;
-}
-.button:hover{
-    background-color: pink;
-    cursor: pointer;
-}
-.buttonAndPrice{
-    margin-left: 8vw;
-    display: flex;
-    flex-direction: row;
-}
-.innerFlexMobile{
-    display: none;
-}
-.imagesMobile{
-    width: 40vw;
-}
-.innerImageMobile{
-    width: 35vw;
-    height: 45vh;
-
-}
-.mobileDiv{
-    display: flex;
-    flex-direction: column;
-}
-.artNameMobile{
-    text-decoration: none;
-    margin-left: 4vw;
-}
-.priceMobile{
-    text-decoration: none;
-    margin-top: 10vh;
+.container {
     margin-left: 10vw;
+    margin-right: 10vw;
 }
-.removeUnderline{
-    text-decoration: none;
+
+
+.image {
+    border-radius: 30px;
+    transition: 1s ease-in-out;
 }
-@media screen and (max-width: 600px){
-    .innerFlex{
-        display: none;
-    }
-    .innerFlexMobile{
-        width: 117%;
-        display: flex;
-        border-bottom: 2px solid black;
-    }
+.image:hover{
+    transform: scale(1.1);
 }

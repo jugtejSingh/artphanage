@@ -41,12 +41,14 @@ export default function Navbar() {
          return (
              <div>
                  <div className={styles.flexNav}>
+                     <Link href="/" className={`${styles.home} ${barlow600.className}`}>HOME</Link>
                      <Link href="/shop" className={`${styles.shop} ${barlow600.className}`}>SHOP</Link>
                      <Link href="/blog" className={`${styles.blog} ${barlow600.className}`}>BLOG</Link>
                      <Link href="/"><img src={"/Logo.png"} width={250} className={styles.image}
                                          alt={"Image"}></img></Link>
+                     <div style={{marginLeft : "20vw"}}>
                      <Link href="/checkout"><Image src={"/shopping-cart.png"} width={30} height={30} alt={"ShoppingCart"} className={styles.cart}></Image></Link>
-                     <Link href={"/login"} className={`${styles.login} ${barlow200.className}`}>Login</Link>
+                     <Link href={"/login"} className={`${styles.login} ${barlow200.className}`}>Login</Link></div>
                  </div>
                  <div className={styles.sidenav} style={{width: isSidenavOpen ? '20vw' : '0'}} ref={sidenavRef}>
                      <Link href={"/"} className={styles.loginText}><h3 className={barlow400.className}>Home</h3></Link>

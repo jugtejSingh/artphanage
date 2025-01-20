@@ -1,6 +1,7 @@
 .flexNav{
     display: flex;
-    background-color: rgb(248,248,248);
+    position: relative;
+    z-index: 2;
 }
 .shop{
     font-family: Arial, serif;
@@ -8,9 +9,21 @@
     font-size: 2vw;
     color: black;
     margin-top: 6vh;
-    margin-left: 10vw;
+    margin-left: 4vw;
 }
 .shop:hover{
+    margin-bottom: 30px;
+    border-bottom: 3px solid black;
+}
+.home{
+    font-family: Arial, serif;
+    text-decoration: none;
+    font-size: 2vw;
+    color: black;
+    margin-top: 6vh;
+    margin-left: 4vw;
+}
+.home:hover{
     margin-bottom: 30px;
     border-bottom: 3px solid black;
 }
@@ -20,7 +33,7 @@
     font-size: 2vw;
     color: black;
     margin-top: 6vh;
-    margin-left: 7vw;
+    margin-left: 4vw;
 }
 .blog:hover{
     padding-bottom: 5px;
@@ -30,15 +43,15 @@
 .cart{
     font-size: 1.5vw;
     font-family: Arial, serif;
-    margin-top: 10vh;
-    margin-left: 18vw;
+    margin-top: 6vh;
+    margin-left: 0vw;
     color: black;
     text-decoration: none;
 }
 .login{
     font-size: 1.5vw;
     font-family: Arial, serif;
-    margin-top: 10vh;
+    margin-top: 6vh;
     margin-left: 4vw;
     color: black;
     text-decoration: none;
@@ -46,11 +59,11 @@
 .image{
     margin-top: 3vh;
     margin-bottom: 3vh;
-    margin-left: 18vw;
-    width: 17vw;
+    margin-left: 15vw;
+    width: 20vw;
 }
 .flexNavMobile{
-    background:rgb(248,248,248);
+    background:rgb(0,0,0);
     width: 100%;
     display: none;
 }
@@ -69,7 +82,7 @@
     text-decoration: none;
     height: 100%;
     position: fixed;
-    background-color: rgb(245,245,245);
+    background-color: rgb(0,0,0);
     overflow-x: hidden;
     transition: width 0.5s ease-in-out; /* Add transition for width */
     z-index: 8; /* Ensure it stays on top */

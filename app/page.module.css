@@ -2,3 +2,14 @@
   background-color: black;
   margin: 0;
 }
+.background{
+  margin-top: -10px;
+  z-index: 1;
+  position: relative;
+  background: url("../public/background.jpg");
+  background-size: cover;
+}
+.mainText{
+  width: 98vw;
+  height: 84.5vh;
+}

@@ -2,6 +2,7 @@ import {useFormState} from "react-dom";
 import {addData} from "@/app/dashboard/serverActions";
 import styles from "@/app/dashboard/cssfiles/addProducts.module.css";
 import {Barlow} from "next/font/google";
+import {useActionState} from "react";
 
 const barlow300 = Barlow({ weight: "300" ,subsets: ['latin'] })
 const barlow400 = Barlow({ weight: "400" ,subsets: ['latin'] })
@@ -22,7 +23,7 @@ export default function AddProducts(){
 
 
     }
-    const [state,formAction] = useFormState(addData,null);
+    const [state,formAction,isPending] = useActionState(addData,null);
     return(
         <div>
             <h2 className={`${styles.addProductsTitle} ${barlow500.className}`}>Add Products</h2>
@@ -89,6 +90,7 @@ export default function AddProducts(){
                 </div>
                 </div>
                     <button type="submit" className={`${styles.submit}  ${barlow400.className}`}>Submit</button>
+                {isPending && <h3>Please Wait.....</h3>}
             </form>
         </div>
 );

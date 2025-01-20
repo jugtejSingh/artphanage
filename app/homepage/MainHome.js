@@ -41,7 +41,7 @@ export default function Homepage() {
                 <h3 ref={text3Ref} className={`${styles.text3} ${barlow900.className}`}>Art That Helps The Helpless.</h3>
                 </div>
             </div>
-                <Image src={"/image2.jpg"} width={700} height={400} className={styles.image} alt={"Image"}></Image>
+                <video width="600" height="600" autoPlay loop muted controls className={styles.video}><source src="/artphanage-video.mp4" type="video/mp4"/>Your browser doesnt support this</video>
             </div>
         </div>
     );
