@@ -5,7 +5,7 @@ import styles from "./cssfiles/slug.module.css"
 import {createContext, useContext, useEffect, useRef, useState} from 'react'
 import {Barlow} from "next/font/google";
 import {gettingData} from "@/app/shop/[slug]/serverAction";
-import {CartAnimation} from "@/app/shop/[slug]/page";
+import {CartAnimation} from "@/app/shop/[slug]/CartContext";
 
 const barlow600 = Barlow({ weight: "600" ,subsets: ['latin'] })
 const barlow400 = Barlow({ weight: "400" ,subsets: ['latin'] })

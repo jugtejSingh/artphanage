@@ -4,7 +4,7 @@ import Link from "next/link";
 import {Barlow} from "next/font/google";
 import {useContext, useEffect, useRef, useState} from "react";
 import Image from "next/image"
-import {CartAnimation} from "@/app/shop/[slug]/page";
+import {CartAnimation} from "@/app/shop/[slug]/CartContext";
 
 const barlow600 = Barlow({ weight: "600" ,subsets: ['latin'], display: 'swap' })
 const barlow400 = Barlow({ weight: "400" ,subsets: ['latin'], display: 'swap' })

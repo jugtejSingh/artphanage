@@ -1,19 +1,14 @@
-"use client"
+"use client";
 
 import Navbar from "@/app/homepage/Navbar";
 import ItemPage from "@/app/shop/[slug]/ItemPage";
-import {createContext, Suspense, useContext, useState} from "react";
+import { CartProvider } from "@/app/shop/[slug]/CartContext"; // Import the provider
 
-export const CartAnimation = createContext(null)
-
-export default function Page({params}) {
-    const [isUpdated, setIsUpdated] = useState(false);
+export default function Page({ params }) {
     return (
-        <div>
-            <CartAnimation.Provider value={{isUpdated, setIsUpdated}}>
-                <Navbar/>
-                <ItemPage params={params}/>
-            </CartAnimation.Provider>
-        </div>
+        <CartProvider>
+            <Navbar />
+            <ItemPage params={params} />
+        </CartProvider>
     );
 }
