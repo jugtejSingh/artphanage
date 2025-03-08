@@ -1,4 +1,5 @@
 import "./globals.css";
+import {CartAnimation, CartProvider} from "@/app/shop/[slug]/CartContext";
 
 export const metadata = {
   title: "Artphanage",
@@ -8,7 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{margin: 0}}>{children}</body>
+      <body style={{margin: 0}}>
+      <CartProvider>
+        {children}
+      </CartProvider>
+      </body>
     </html>
   );
 }
