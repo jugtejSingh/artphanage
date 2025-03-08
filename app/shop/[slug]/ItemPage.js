@@ -27,7 +27,7 @@ export default function ItemPage({params}) {
             setBiggerImage(await paintingData.imageName[0])
         }
         fetchData()
-    }, [params.slug]);
+    }, []);
 
     useEffect(() => {
         const checkData = async () => {
@@ -40,7 +40,7 @@ export default function ItemPage({params}) {
             }
         }
         checkData()
-    }, [params.slug]);
+    }, []);
 
 
     const handleImageClick = (image) => {
