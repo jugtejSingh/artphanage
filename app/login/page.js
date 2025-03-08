@@ -1,8 +1,9 @@
 import Login from "@/app/login/login";
+import styles from "./cssfiles/page.module.css"
 
 export default function LoginHome() {
     return (
-        <div>
+        <div className={styles.mainPage}>
             <Login />
         </div>
     );

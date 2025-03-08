@@ -1,8 +1,8 @@
 'use client';
 import styles from "./cssfiles/mainhome.module.css"
-import Image from "next/image"
 import {useEffect, useRef} from "react";
 import {Barlow} from "next/font/google";
+import Image from "next/image";
 
 const barlow900 = Barlow({ weight: "700" ,subsets: ['latin'], display: 'swap' })
 
@@ -30,19 +30,19 @@ export default function Homepage() {
     return (
         <div>
             <div className={styles.imageAndText}>
-            <div className={styles.left}>
-                <div className={styles.marginRight}>
-                <h3 ref={text1Ref} className={`${styles.text1} ${barlow900.className}`}>Art With A Purpose.</h3>
+                <div className={styles.left}>
+                    <div className={styles.marginRight}>
+                    <h3 ref={text1Ref} className={`${styles.text1} ${barlow900.className}`}>Art With A Purpose.</h3>
+                    </div>
+                    <div className={styles.marginRight2}>
+                    <h3 ref={text2Ref} className={`${styles.text2} ${barlow900.className}`}>Art That You Can Trust.</h3>
+                    </div>
+                    <div>
+                    <h3 ref={text3Ref} className={`${styles.text3} ${barlow900.className}`}>Art That Helps The Helpless.</h3>
+                    </div>
                 </div>
-                <div className={styles.marginRight2}>
-                <h3 ref={text2Ref} className={`${styles.text2} ${barlow900.className}`}>Art That You Can Trust.</h3>
+                    <Image src={"/Untitled.png"} alt={"image"} width={2000} height={2000} className={styles.mainImage}></Image>
                 </div>
-                <div>
-                <h3 ref={text3Ref} className={`${styles.text3} ${barlow900.className}`}>Art That Helps The Helpless.</h3>
-                </div>
-            </div>
-                <video width="600" height="600" autoPlay loop muted controls className={styles.video}><source src="/artphanage-video.mp4" type="video/mp4"/>Your browser doesnt support this</video>
-            </div>
         </div>
     );
 }

@@ -1,9 +1,8 @@
 .container {
     margin-left: 10vw;
     margin-right: 10vw;
+    margin-top: 4vh;
 }
-
-
 .image {
     border-radius: 30px;
     transition: 1s ease-in-out;

@@ -16,11 +16,12 @@ export async function submitted(state, data) {
             email: email
         }
     })
+    console.log(checkingUser.id)
     if (checkingUser) {
         const passwordOld = checkingUser.password;
         const match = await bcrypt.compare(password, passwordOld)
         if (match) {
-            await createSession(email)
+            await createSession(checkingUser.id)
             redirect("/dashboard")
         } else{
             console.log("error raised")
@@ -46,7 +47,7 @@ export async function createSession(userId) {
     const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
     const session = await encrypt({ userId, expiresAt })
 
-    cookies().set('session', session, {
+    await cookies().set('session', session, {
         httpOnly: true,
         secure: true,
         expires: expiresAt,

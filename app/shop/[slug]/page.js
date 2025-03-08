@@ -2,13 +2,18 @@
 
 import Navbar from "@/app/homepage/Navbar";
 import ItemPage from "@/app/shop/[slug]/ItemPage";
-import {Suspense} from "react";
+import {createContext, Suspense, useContext, useState} from "react";
+
+export const CartAnimation = createContext(null)
 
 export default function Page({params}) {
+    const [isUpdated, setIsUpdated] = useState(false);
     return (
         <div>
-            <Navbar />
-            <ItemPage params={params} />
+            <CartAnimation.Provider value={{isUpdated, setIsUpdated}}>
+                <Navbar/>
+                <ItemPage params={params}/>
+            </CartAnimation.Provider>
         </div>
     );
 }

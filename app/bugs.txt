@@ -1,0 +1,2 @@
+1) Descriptions in item pages
+2) Upstream image issue which stems from images expiring

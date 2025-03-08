@@ -7,7 +7,7 @@ const secretKey = process.env.SESSION_SECRET
 const encodedKey = new TextEncoder().encode(secretKey)
 
 export const verifySession = cache(async () => {
-    const cookie = await cookies().get('session')?.value
+    const cookie = await (await cookies()).get('session')?.value
     if (cookie === undefined){
         return {isAuth: false, userId: null}
     } else{

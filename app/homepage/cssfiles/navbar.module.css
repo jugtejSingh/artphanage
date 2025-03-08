@@ -2,6 +2,8 @@
     display: flex;
     position: relative;
     z-index: 2;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to left, #ffffff, #005F73) 1;
 }
 .shop{
     font-family: Arial, serif;
@@ -12,7 +14,7 @@
     margin-left: 4vw;
 }
 .shop:hover{
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
     border-bottom: 3px solid black;
 }
 .home{
@@ -24,7 +26,7 @@
     margin-left: 4vw;
 }
 .home:hover{
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
     border-bottom: 3px solid black;
 }
 .blog{
@@ -36,25 +38,28 @@
     margin-left: 4vw;
 }
 .blog:hover{
-    padding-bottom: 5px;
+    margin-bottom: 3vh;
     border-bottom: 3px solid black;
 }
 
 .cart{
-    font-size: 1.5vw;
-    font-family: Arial, serif;
-    margin-top: 6vh;
-    margin-left: 0vw;
-    color: black;
-    text-decoration: none;
+    margin-top: 6.5vh;
+    width: 2vw;
+    height: 5vh;
+}
+.cartMobile{
+    margin-top: 2vh;
+    margin-left: 8vw;
+    width: 7vw;
+    height: 4vh;
 }
 .login{
     font-size: 1.5vw;
     font-family: Arial, serif;
-    margin-top: 6vh;
     margin-left: 4vw;
     color: black;
     text-decoration: none;
+    margin-top: 7vh;
 }
 .image{
     margin-top: 3vh;
@@ -63,18 +68,20 @@
     width: 20vw;
 }
 .flexNavMobile{
-    background:rgb(0,0,0);
     width: 100%;
     display: none;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to left, #ffffff, #005F73) 1;
 }
 .menuMobile{
     margin-left: 3vw;
-    margin-top: 4vh;
-    width: 8vw;
+    margin-top: 2vh;
+    width: 10vw;
+    height: 5vh;
 }
 .imageMobile{
-    margin-left: 24vw;
-    width: 37vw;
+    margin-left: 16vw;
+    width: 50vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
@@ -82,10 +89,12 @@
     text-decoration: none;
     height: 100%;
     position: fixed;
-    background-color: rgb(0,0,0);
+    background: pink;
     overflow-x: hidden;
-    transition: width 0.5s ease-in-out; /* Add transition for width */
-    z-index: 8; /* Ensure it stays on top */
+    transition: width 0.5s ease-in-out;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
 }
 /* Sidenav links */
 .sidenav h3 {
@@ -95,19 +104,22 @@
     color: #818181;
     transition: 0.3s;
 }
-
 .sidenav h3:hover {
     text-decoration: none;
     font-weight: bold;
 }
 .border{
     border: 1px solid rgb(0,0,0);
+    margin-top: 2vh;
 }
-.loginText{
+.homeMobile, .shopMobile, .loginMobile, .blogMobile{
+    color: black;
+    margin-left: 7vw;
+    margin-top: 2vh;
     text-decoration: none;
+    font-size: 2rem;
 }
-@media screen and (max-width: 600px){
-
+@media screen and (max-width: 800px){
     .flexNav{
         display: none;
     }
@@ -115,5 +127,9 @@
         display: flex;
         flex-direction: row;
     }
-
+}
+.flexInner{
+    margin-left: 20vw;
+    display: flex;
+    flex-direction: row;
 }

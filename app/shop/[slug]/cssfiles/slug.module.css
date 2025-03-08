@@ -20,13 +20,17 @@
 }
 .mainImage{
     margin-left: 3vw;
-    width: 380px;
-    height: 500px;
-    overflow: hidden;
+    object-fit: contain;
+}
+.mainImageFill{
+    position: relative;
+    width: 35vw;
+    height: 70vh;
 }
 .sideImage{
-    width: 8vw;
-    height: 22vh;
+    object-fit: contain;
+    width: 10vw;
+    height: 20vh;
     margin-bottom: 1vh;
 }
 .artName{
@@ -37,7 +41,8 @@
     margin-left: 5vw;
 }
 .description{
-    font-size: 20px;
+    font-size: 1rem;
+    width: 40vw;
     text-align: center;
 }
 .dimensions{
@@ -59,11 +64,6 @@
     margin-top: 2vh;
     border-radius: 40px;
     margin-left: 2vw;
-}
-.mainImageFill{
-    position: relative;
-    width: 35vw;
-    height: 70vh;
 }
 .loading{
     display: block;

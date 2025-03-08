@@ -20,6 +20,8 @@ model paintings {
   orphanage      String
   childName      String
   location       String
+  order          order?        @relation(fields: [orderId], references: [id])
+  orderId        String?       @db.ObjectId
   organization   organization? @relation(fields: [organizationId], references: [id])
   organizationId String?       @db.ObjectId
 }
@@ -31,4 +33,18 @@ model organization {
   password  String
   role      String
   name      String
+}
+
+model order {
+  id                  String      @id @default(auto()) @map("_id") @db.ObjectId
+  paintings           paintings[]
+  email               String      @unique
+  name                String
+  phoneNumber         String
+  address             String
+  city                String
+  state               String
+  country             String
+  pincode             String
+  clientTransactionId String
 }

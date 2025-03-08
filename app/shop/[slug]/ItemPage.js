@@ -2,30 +2,46 @@
 
 import Image from "next/image";
 import styles from "./cssfiles/slug.module.css"
-import {useEffect, useState} from 'react'
+import {createContext, useContext, useEffect, useRef, useState} from 'react'
 import {Barlow} from "next/font/google";
 import {gettingData} from "@/app/shop/[slug]/serverAction";
-import {redirect} from "next/navigation";
+import {CartAnimation} from "@/app/shop/[slug]/page";
 
 const barlow600 = Barlow({ weight: "600" ,subsets: ['latin'] })
 const barlow400 = Barlow({ weight: "400" ,subsets: ['latin'] })
 const barlow800 = Barlow({ weight: "800" ,subsets: ['latin'] })
 
 export default function ItemPage({params}) {
-    const [painting, setPaintings] = useState([]);
+    const { setIsUpdated } = useContext(CartAnimation);
+    const [painting, setPainting] = useState([]);
     const [biggerImage, setBiggerImage] = useState();
-    const [dots,setDots] = useState("/fulldot.png")
     const [touchStart, setTouchStart] = useState(0);
     const [touchEnd, setTouchEnd] = useState(0);
     const [isImageClicked, setIsImageClicked] = useState(false);
+    const [changeBuyButton, setChangeBuyButton] = useState(false)
     useEffect(() => {
         const fetchData = async () => {
             const paintingData = await gettingData(await params.slug)
-            setPaintings(paintingData)
+            if (paintingData)
+            setPainting(paintingData)
             setBiggerImage(await paintingData.imageName[0])
         }
         fetchData()
     }, [params.slug]);
+
+    useEffect(() => {
+        const checkData = async () => {
+            const storage = localStorage.getItem("cart")
+            for (let i = 0; i < storage.length; i++){
+                if (storage[i].slug === painting.slug){
+                    setChangeBuyButton(true)
+                    break
+                }
+            }
+        }
+        checkData()
+    }, [params.slug]);
+
 
     const handleImageClick = (image) => {
         setBiggerImage(image)
@@ -75,26 +91,14 @@ export default function ItemPage({params}) {
             }
         }
     }
-    //FIX this function so it shows that the product is already in the cart
     function buttonClicked(painting) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let count = 0
-        for(let i = 0; i < cart.length; i++){
-            if(cart.slug !== painting.slug){
-                count = count + 1
-            }
+        cart.push(painting)
+        let jsonString = JSON.stringify(cart);
+        localStorage.setItem('cart', jsonString);
+        setIsUpdated(true)
+        setChangeBuyButton(true)
         }
-        if (count === cart.length-1){
-            cart.push(painting)
-            let jsonString = JSON.stringify(cart);
-            localStorage.setItem('cart', jsonString);
-            setIsImageClicked(true)
-            setTimeout(() => {
-                setIsImageClicked(false);}, 500);
-        } else{
-
-        }
-    }
 
     return (
         <div>
@@ -106,7 +110,7 @@ export default function ItemPage({params}) {
                     ))}
                 </div>
                 <div className={styles.mainImageFill}>
-                    <Image src={biggerImage} alt={"Image"} width={10000} height={10000}
+                    <Image src={biggerImage} alt={"Image"} fill={true}
                            className={`${styles.mainImage} ${isImageClicked ? styles.imageAnimation : ''}`}/>
                 </div>
                 <div className={styles.textSide}>
@@ -116,7 +120,9 @@ export default function ItemPage({params}) {
 
                     <div className={styles.flex3}>
                         <h2 className={`${barlow400.className} ${styles.price}`}>${painting.price}</h2>
-                        <button className={styles.button} onClick={(e) => buttonClicked(painting)}>Buy Now</button>
+                        {changeBuyButton ? <button className={styles.button}>Cant Buy</button>:
+                            <button className={styles.button} onClick={(e) =>
+                            buttonClicked(painting)}>Buy Now</button>}
                     </div>
 
                     <h2 className={`${barlow400.className} ${styles.additionalInfo}`}>Additional Information</h2>

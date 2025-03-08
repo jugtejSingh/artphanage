@@ -1,0 +1,11 @@
+.currentProductsTitle{
+    font-size: 2rem;
+    margin-left: 35vw;
+}
+.currentProductsDiv{
+    margin-left: 12vw;
+    width: 60vw;
+    border: 1px solid black;
+    height: 60vh;
+
+}

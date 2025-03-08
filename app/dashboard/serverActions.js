@@ -30,7 +30,7 @@ export async function addData(state,data){
     const userId = await authentication.userId
     const userInformation = await prisma.organization.findFirst({
         where:{
-            email : userId
+            id : userId
         }
     });
     const name = data.get("nameOfArt");
@@ -85,4 +85,15 @@ async function uploadFile(nameOfFile, buffer){
     } catch (err) {
         console.error('Error uploading file:', err);
     }
-};
+}
+export async function gettingData(){
+    const authentication = await verifySession();
+    const userId = await authentication.userId
+    console.log(userId)
+    let returnData = await prisma.paintings.findMany({
+        where :{
+            organizationId: userId,
+        },
+    })
+    return returnData
+}

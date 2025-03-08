@@ -2,18 +2,11 @@
     font-family: Arial, serif;
     margin-top: 13vh;
     font-size: 2.5vw;
-
 }
 .imageAndText{
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-.video{
-    margin-top: 10vh;
-    width: 40vw;
-    height: 65vh;
-    margin-left: 4vw;
 }
 .text1{
     overflow: hidden;
@@ -82,68 +75,29 @@
 .marginRight2{
     margin-right: 100px;
 }
+.mainImage{
+    width: 45vw;
+    height: 80vh;
+    margin-left: 1vw;
+}
 @media screen and (max-width: 600px) {
-    .imageAndText {
-        flex-direction: column-reverse;
+    .marginRight{
+        margin-right: 10vw;
+        margin-left: 12vw;
     }
-
-    .image {
-        width: 100%;
-        height: 40vh;
-        margin-left: 0;
-        margin-top: 0;
+    .marginRight2{
+        margin-left: 7vw;
+        margin-right: 4vw;
     }
-
-    .left {
-        margin-left: 4vw;
-        margin-top: 5vh;
+    .mainImage{
+        position: absolute;
+        z-index: -1;
+        width: 95vw;
+        height: 65vh;
+        margin-top: 7vh;
+    }
+    .left{
+        margin-top: 25vh;
         font-size: 6vw;
-    }
-
-    .text1 {
-        margin-left: 17vw;
-    }
-
-    .marginRight {
-        margin-right: 14vw;
-    }
-    .text2 {
-        margin-left: 11vw;
-    }
-    .marginRight2 {
-        margin-right: 5vw;
-    }
-
-    .text3 {
-        margin-left: 3vw;
-    }
-
-    @keyframes typing {
-        from {
-            width: 0;
-        }
-        to {
-            width: 80%;
-        }
-    }
-    @keyframes typing2 {
-        from {
-            opacity: 1;
-            width: 0;
-        }
-        100% {
-            opacity: 1;
-            width: 80%;
-        }
-    }
-    @keyframes typing3 {
-        from {
-            opacity: 1;
-            width: 0;
-        }
-        100% {
-            opacity: 1;
-            width: 97%;
-        }
     }
 }
